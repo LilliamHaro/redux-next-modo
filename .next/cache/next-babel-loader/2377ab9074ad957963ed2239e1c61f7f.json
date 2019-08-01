@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var CHANGE_MODO = 'CHANGE_MODO';","map":{"version":3,"sources":["C:\\Users\\lilliam\\Desktop\\front-end\\practica\\next-redux-pc-2\\redux\\actionTypes.js"],"names":["CHANGE_MODO"],"mappings":"AAAA,OAAO,IAAMA,WAAW,GAAG,aAApB","sourcesContent":["export const CHANGE_MODO = 'CHANGE_MODO'"]},"metadata":{},"sourceType":"module"}

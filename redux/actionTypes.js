@@ -1,0 +1,1 @@
+export const CHANGE_MODO = 'CHANGE_MODO'

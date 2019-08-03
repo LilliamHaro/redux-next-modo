@@ -720,8 +720,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/store */ "./redux/store.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__);
 
 var _jsxFileName = "C:\\Users\\lilliam\\Desktop\\front-end\\practica\\next-redux-pc-2\\pages\\_app.js";
+
+
 
 
 
@@ -746,25 +750,26 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
   render() {
     const {
       Component,
-      pageProps
+      pageProps,
+      dataApi
     } = this.props;
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 24
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {
       store: _redux_store__WEBPACK_IMPORTED_MODULE_4__["default"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 23
+        lineNumber: 25
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 26
       },
       __self: this
     }))));
@@ -780,13 +785,17 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
 /*!******************************!*\
   !*** ./redux/actionTypes.js ***!
   \******************************/
-/*! exports provided: CHANGE_MODO */
+/*! exports provided: CHANGE_MODO, FILL_DATAAPI, ADD_TO_CAR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CHANGE_MODO", function() { return CHANGE_MODO; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FILL_DATAAPI", function() { return FILL_DATAAPI; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_TO_CAR", function() { return ADD_TO_CAR; });
 const CHANGE_MODO = 'CHANGE_MODO';
+const FILL_DATAAPI = 'FILL_DATAAPI';
+const ADD_TO_CAR = 'ADD_TO_CAR';
 
 /***/ }),
 
@@ -806,7 +815,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const InitialState = {
   modo: 'noche',
-  modoTitle: 'MODO NOCHE'
+  modoTitle: 'MODO NOCHE',
+  dataApi: [],
+  buyCar: []
 };
 
 function rootReducer(state = InitialState, action) {
@@ -814,6 +825,18 @@ function rootReducer(state = InitialState, action) {
     return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
       modo: state.modo === 'noche' ? 'dia' : 'noche',
       modoTitle: state.modo === 'noche' ? 'MODO DÍA' : 'MODO NOCHE'
+    });
+  }
+
+  if (action.type === _actionTypes__WEBPACK_IMPORTED_MODULE_1__["FILL_DATAAPI"]) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      dataApi: action.payload
+    });
+  }
+
+  if (action.type === _actionTypes__WEBPACK_IMPORTED_MODULE_1__["ADD_TO_CAR"]) {
+    return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      buyCar: state.buyCar.concat(action.payload)
     });
   }
 
@@ -896,6 +919,17 @@ module.exports = require("core-js/library/fn/object/get-own-property-descriptor"
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/promise");
+
+/***/ }),
+
+/***/ "isomorphic-unfetch":
+/*!*************************************!*\
+  !*** external "isomorphic-unfetch" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("isomorphic-unfetch");
 
 /***/ }),
 

@@ -40,7 +40,6 @@ const Nav = props => (
         nav ul li a {
           transitiion: all 0.3s;
         }
-      }
     `}</style>
   </nav>
 );

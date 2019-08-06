@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1169,13 +1169,7 @@ var _jsxFileName = "C:\\Users\\lilliam\\Desktop\\front-end\\practica\\next-redux
 
 
 
-const mapStateToProps = state => {
-  return {
-    dataApi: state.dataApi
-  };
-};
-
-class ProductConnected extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
+class Product extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor() {
     super();
     this.state = {};
@@ -1185,63 +1179,61 @@ class ProductConnected extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 20
+        lineNumber: 14
       },
       __self: this
-    }, this.props.dataApi.map((item, i) => {
-      if (item.ProductCode === this.props.cc.product) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-          key: i,
-          className: "mainContent",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 24
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_seoHead__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          title: item.ProductName,
-          description: item.ProductDescription,
-          url: "ssssssfff",
-          ogImage: item.ProductImage,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 25
-          },
-          __self: this
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 31
-          },
-          __self: this
-        }, item.ProductName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 32
-          },
-          __self: this
-        }, item.ProductDescription), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          src: item.ProductImage,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 33
-          },
-          __self: this
-        }));
-      }
-    }));
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_seoHead__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      title: this.props.item[0].ProductName,
+      description: this.props.item[0].ProductDescription,
+      url: "ssssssfff",
+      ogImage: this.props.item[0].ProductImage,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      className: "mainContent",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, this.props.item[0].ProductName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, this.props.item[0].ProductDescription), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: this.props.item[0].ProductImage,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    })));
+    ProductName;
   }
 
 }
 
-ProductConnected.getInitialProps = async context => {
+Product.getInitialProps = async context => {
   const cc = context.query;
+  const res = await fetch(`https://oazivitality.com/api/parse?${cc.product}`);
+  const item = await res.json();
   return {
-    cc
+    cc,
+    item: item.products
   };
 };
 
-const Product = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(mapStateToProps)(ProductConnected);
 /* harmony default export */ __webpack_exports__["default"] = (Product);
 
 /***/ }),
@@ -1299,7 +1291,7 @@ function addToCar(payload) {
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*******************************************!*\
   !*** multi ./pages/products/[product].js ***!
   \*******************************************/

@@ -3,62 +3,37 @@ import Layout from "../../components/layout";
 import { connect } from "react-redux";
 import SeoHead from "../../components/seoHead";
 
-const mapStateToProps = state => {
-  return {
-    dataApi: state.dataApi
-  };
-};
-
-class ProductConnected extends Component {
+class Product extends Component {
   constructor() {
     super();
     this.state = {};
   }
 
-  // static async getInitialProps({ query }) {
-  //   try {
-  //     const res = await fetch(`http://localhost/api/posts/${query.postslug}`, {
-  //       method: 'GET', // *GET, POST, PUT, DELETE, etc.
-  //       mode: 'cors', // no-cors, cors, *same-origin
-  //     });
-  //     const json = await res.json();
-  //     return { data: json.data };
-  //   } catch (err) {
-  //     console.log('err');
-  //   }
-  // }
-
-
   render() {
     return (
       <Layout>
-        {this.props.dataApi.map((item, i) => {
-          if (item.ProductCode === this.props.cc.product) {
-            return (
-              <section key={i} className="mainContent">
-                <SeoHead
-                  title={item.ProductName}
-                  description={item.ProductDescription}
-                  url="ssssssfff"
-                  ogImage={item.ProductImage}
-                />
-                <h1>{item.ProductName}</h1>
-                <p>{item.ProductDescription}</p>
-                <img src={item.ProductImage}  />
-              </section>
-            );
-          }
-        })}
+        <SeoHead
+          title={this.props.item[0].ProductName}
+          description={this.props.item[0].ProductDescription}
+          url="ssssssfff"
+          ogImage={this.props.item[0].ProductImage}
+        />
+
+        <section className="mainContent">
+          <h1>{this.props.item[0].ProductName}</h1>
+          <p>{this.props.item[0].ProductDescription}</p>
+          <img src={this.props.item[0].ProductImage} />
+        </section>
       </Layout>
     );
   }
 }
 
-ProductConnected.getInitialProps = async context => {
+Product.getInitialProps = async context => {
   const cc = context.query;
-  return { cc };
+  const res = await fetch(`https://oazivitality.com/api/parse?${cc.product}`);
+  const item = await res.json();
+  return { cc, item: item.products };
 };
-
-const Product = connect(mapStateToProps)(ProductConnected);
 
 export default Product;

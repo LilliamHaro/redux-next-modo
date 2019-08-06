@@ -5,45 +5,50 @@ import SeoHead from "../../components/seoHead";
 
 const mapStateToProps = state => {
   return {
-    dataApi: state.dataApi,
+    dataApi: state.dataApi
   };
 };
 
 class ProductConnected extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state = {
-      itemName: ''
-    }
+    this.state = {};
   }
-  componentDidMount() {
-    this.props.dataApi.map((item, i) =>
-      item.ProductCode === this.props.cc.product ? (
-        this.setState({
-          itemName: item.ProductName
-        },function(){
-          console.log(this.state.itemName)
-        })
-      ) : null
-    );
-  }
+
+  // static async getInitialProps({ query }) {
+  //   try {
+  //     const res = await fetch(`http://localhost/api/posts/${query.postslug}`, {
+  //       method: 'GET', // *GET, POST, PUT, DELETE, etc.
+  //       mode: 'cors', // no-cors, cors, *same-origin
+  //     });
+  //     const json = await res.json();
+  //     return { data: json.data };
+  //   } catch (err) {
+  //     console.log('err');
+  //   }
+  // }
+
 
   render() {
     return (
       <Layout>
-        <SeoHead
-          title="About"
-          description="About description"
-          url="ssssssfff"
-          ogImage="https://circuit.com.pe/test-nextjs/static/mor.jpg"
-        />
-
-        <section className="mainContent">
-          <h1>
-            {this.state.itemName}
-          </h1>
-          
-        </section>
+        {this.props.dataApi.map((item, i) => {
+          if (item.ProductCode === this.props.cc.product) {
+            return (
+              <section key={i} className="mainContent">
+                <SeoHead
+                  title={item.ProductName}
+                  description={item.ProductDescription}
+                  url="ssssssfff"
+                  ogImage={item.ProductImage}
+                />
+                <h1>{item.ProductName}</h1>
+                <p>{item.ProductDescription}</p>
+                <img src={item.ProductImage}  />
+              </section>
+            );
+          }
+        })}
       </Layout>
     );
   }

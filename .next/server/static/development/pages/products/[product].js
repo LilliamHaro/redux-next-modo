@@ -1178,50 +1178,58 @@ const mapStateToProps = state => {
 class ProductConnected extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor() {
     super();
-    this.state = {
-      itemName: ''
-    };
-  }
-
-  componentDidMount() {
-    this.props.dataApi.map((item, i) => item.ProductCode === this.props.cc.product ? this.setState({
-      itemName: item.ProductName
-    }, function () {
-      console.log(this.state.itemName);
-    }) : null);
+    this.state = {};
   }
 
   render() {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 33
+        lineNumber: 20
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_seoHead__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      title: "About",
-      description: "About description",
-      url: "ssssssfff",
-      ogImage: "https://circuit.com.pe/test-nextjs/static/mor.jpg",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-      className: "mainContent",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 41
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 42
-      },
-      __self: this
-    }, this.state.itemName)));
+    }, this.props.dataApi.map((item, i) => {
+      if (item.ProductCode === this.props.cc.product) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+          key: i,
+          className: "mainContent",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_seoHead__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          title: item.ProductName,
+          description: item.ProductDescription,
+          url: "ssssssfff",
+          ogImage: item.ProductImage,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25
+          },
+          __self: this
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31
+          },
+          __self: this
+        }, item.ProductName), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32
+          },
+          __self: this
+        }, item.ProductDescription), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: item.ProductImage,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 33
+          },
+          __self: this
+        }));
+      }
+    }));
   }
 
 }

@@ -1,13 +1,31 @@
 import { createStore } from 'redux'
 import rootReducer from './reducers'
+import { loadState, saveState } from './localStorage';
 
 
-// const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
+const persistedState = loadState();
 
-const store= createStore(rootReducer) 
+// const store= createStore(rootReducer,persistedState ) 
 
-// store.subscribe(()=>{
-//   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
-// })
+
+// store.subscribe(() => {
+//   saveState({
+//     modo: store.getState().modo,
+//     modoTitle: store.getState().modoTitle,
+//   });
+// });
+
+const store= createStore(rootReducer,persistedState)
+
+store.subscribe(() => {
+  saveState({
+    modo: store.getState().modo,
+    modoTitle: store.getState().modoTitle,
+    dataApi: store.getState().dataApi,
+  buyCar: store.getState().buyCar,
+  });
+});
+
+
 
 export default store

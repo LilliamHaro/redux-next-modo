@@ -23,7 +23,7 @@ class ConnectedLayout extends Component {
   }
 
   componentDidMount() {
-    if (this.props.dataApi.length === 0) {
+    if (this.props.dataApi.length === 0 ) {
       console.log()
       let that = this;
       fetch("https://oazivitality.com/api/products")

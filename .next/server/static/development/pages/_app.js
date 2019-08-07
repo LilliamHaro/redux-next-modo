@@ -814,8 +814,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const InitialState = {
-  modo: 'noche',
-  modoTitle: 'MODO NOCHE',
+  modo: "noche",
+  modoTitle: "MODO NOCHE",
   dataApi: [],
   buyCar: []
 };
@@ -823,8 +823,8 @@ const InitialState = {
 function rootReducer(state = InitialState, action) {
   if (action.type === _actionTypes__WEBPACK_IMPORTED_MODULE_1__["CHANGE_MODO"]) {
     return _babel_runtime_corejs2_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
-      modo: state.modo === 'noche' ? 'dia' : 'noche',
-      modoTitle: state.modo === 'noche' ? 'MODO DÍA' : 'MODO NOCHE'
+      modo: state.modo === "noche" ? "dia" : "noche",
+      modoTitle: state.modo === "noche" ? "MODO DÍA" : "MODO NOCHE"
     });
   }
 
@@ -860,8 +860,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./reducers */ "./redux/reducers.js");
 
+ // const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {}
 
-const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_1__["default"]);
+const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_1__["default"]); // store.subscribe(()=>{
+//   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+// })
+
 /* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),

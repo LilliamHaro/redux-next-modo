@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1221,7 +1221,7 @@ class IndexConnected extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       },
       __self: this
     }, this.props.dataApi.map((item, i) => react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
-      key: i,
+      key: item.ProductCode,
       className: "jsx-2489697889",
       __source: {
         fileName: _jsxFileName,
@@ -1229,8 +1229,8 @@ class IndexConnected extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_4___default.a, {
-      href: "/products?slug=" + item.ProductCode,
-      as: "/products/" + item.ProductCode,
+      href: "/products/[product]",
+      as: `/products/${item.ProductCode}`,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 27
@@ -1240,13 +1240,13 @@ class IndexConnected extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
       className: "jsx-2489697889",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 31
+        lineNumber: 29
       },
       __self: this
     }, item.ProductName)))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
       id: "2489697889",
       __self: this
-    }, "\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcbGlsbGlhbVxcRGVza3RvcFxcZnJvbnQtZW5kXFxwcmFjdGljYVxcbmV4dC1yZWR1eC1wYy0yXFxwYWdlc1xcYWJvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBcUNrQiIsImZpbGUiOiJDOlxcVXNlcnNcXGxpbGxpYW1cXERlc2t0b3BcXGZyb250LWVuZFxccHJhY3RpY2FcXG5leHQtcmVkdXgtcGMtMlxccGFnZXNcXGFib3V0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gXCJyZWFjdFwiO1xyXG5pbXBvcnQgTGF5b3V0IGZyb20gXCIuLi9jb21wb25lbnRzL2xheW91dFwiO1xyXG5pbXBvcnQgU2VvSGVhZCBmcm9tICcuLi9jb21wb25lbnRzL3Nlb0hlYWQnO1xyXG5pbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XHJcbmltcG9ydCB7IGNvbm5lY3QgfSBmcm9tICdyZWFjdC1yZWR1eCc7XHJcblxyXG5cclxuY29uc3QgbWFwU3RhdGVUb1Byb3BzID0gc3RhdGUgPT4ge1xyXG4gIHJldHVybiB7XHJcbiAgICBkYXRhQXBpOnN0YXRlLmRhdGFBcGlcclxuICB9XHJcbn1cclxuXHJcbmNsYXNzIEluZGV4Q29ubmVjdGVkIGV4dGVuZHMgQ29tcG9uZW50IHtcclxuICByZW5kZXIoKSB7XHJcbiAgICByZXR1cm4gKCA8TGF5b3V0PlxyXG4gICAgICA8U2VvSGVhZCAgdGl0bGU9XCJBYm91dFwiXHJcbiAgICAgICAgZGVzY3JpcHRpb249XCJBYm91dCBkZXNjcmlwdGlvblwiXHJcbiAgICAgICAgdXJsPVwic3Nzc3NzZmZmXCJcclxuICAgICAgICBvZ0ltYWdlPVwiaHR0cHM6Ly9jaXJjdWl0LmNvbS5wZS90ZXN0LW5leHRqcy9zdGF0aWMvbW9yLmpwZ1wiLz5cclxuXHJcbiAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT1cInByaW5jaXBhbENvbnRlbnRcIj5cclxuICAgICAgICA8aDE+QUJPVVQ8L2gxPlxyXG4gICAgICAgIDx1bCBjbGFzc05hbWU9XCJhYm91dF9saXN0XCI+XHJcbiAgICAgICAgICB7dGhpcy5wcm9wcy5kYXRhQXBpLm1hcCggKGl0ZW0saSkgPT4gKFxyXG4gICAgICAgICAgICA8bGkga2V5PXtpfT5cclxuICAgICAgICAgICAgICA8TGlua1xyXG4gICAgICAgICAgICAgICAgaHJlZj17XCIvcHJvZHVjdHM/c2x1Zz1cIiArIGl0ZW0uUHJvZHVjdENvZGV9XHJcbiAgICAgICAgICAgICAgICBhcz17XCIvcHJvZHVjdHMvXCIgKyBpdGVtLlByb2R1Y3RDb2RlfVxyXG4gICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgIDxhPntpdGVtLlByb2R1Y3ROYW1lfTwvYT5cclxuICAgICAgICAgICAgICA8L0xpbms+PC9saT5cclxuICAgICAgICAgICkgKX1cclxuICAgICAgICA8L3VsPlxyXG5cclxuICAgICAgPC9zZWN0aW9uPlxyXG5cclxuICAgICAgPHN0eWxlIGpzeD57YFxyXG4gICAgICAgIFxyXG4gICAgICAgIFxyXG4gICAgICAgIGB9PC9zdHlsZT5cclxuICAgICAgXHJcbiAgICA8L0xheW91dD4pO1xyXG4gIH1cclxufVxyXG5cclxuY29uc3QgSW5kZXggPSBjb25uZWN0KG1hcFN0YXRlVG9Qcm9wcykoSW5kZXhDb25uZWN0ZWQpXHJcblxyXG5leHBvcnQgZGVmYXVsdCBJbmRleFxyXG4iXX0= */\n/*@ sourceURL=C:\\Users\\lilliam\\Desktop\\front-end\\practica\\next-redux-pc-2\\pages\\about.js */"));
+    }, "\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcbGlsbGlhbVxcRGVza3RvcFxcZnJvbnQtZW5kXFxwcmFjdGljYVxcbmV4dC1yZWR1eC1wYy0yXFxwYWdlc1xcYWJvdXQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBbUNrQiIsImZpbGUiOiJDOlxcVXNlcnNcXGxpbGxpYW1cXERlc2t0b3BcXGZyb250LWVuZFxccHJhY3RpY2FcXG5leHQtcmVkdXgtcGMtMlxccGFnZXNcXGFib3V0LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IENvbXBvbmVudCB9IGZyb20gXCJyZWFjdFwiO1xyXG5pbXBvcnQgTGF5b3V0IGZyb20gXCIuLi9jb21wb25lbnRzL2xheW91dFwiO1xyXG5pbXBvcnQgU2VvSGVhZCBmcm9tICcuLi9jb21wb25lbnRzL3Nlb0hlYWQnO1xyXG5pbXBvcnQgTGluayBmcm9tIFwibmV4dC9saW5rXCI7XHJcbmltcG9ydCB7IGNvbm5lY3QgfSBmcm9tICdyZWFjdC1yZWR1eCc7XHJcblxyXG5cclxuY29uc3QgbWFwU3RhdGVUb1Byb3BzID0gc3RhdGUgPT4ge1xyXG4gIHJldHVybiB7XHJcbiAgICBkYXRhQXBpOnN0YXRlLmRhdGFBcGlcclxuICB9XHJcbn1cclxuXHJcbmNsYXNzIEluZGV4Q29ubmVjdGVkIGV4dGVuZHMgQ29tcG9uZW50IHtcclxuICByZW5kZXIoKSB7XHJcbiAgICByZXR1cm4gKCA8TGF5b3V0PlxyXG4gICAgICA8U2VvSGVhZCAgdGl0bGU9XCJBYm91dFwiXHJcbiAgICAgICAgZGVzY3JpcHRpb249XCJBYm91dCBkZXNjcmlwdGlvblwiXHJcbiAgICAgICAgdXJsPVwic3Nzc3NzZmZmXCJcclxuICAgICAgICBvZ0ltYWdlPVwiaHR0cHM6Ly9jaXJjdWl0LmNvbS5wZS90ZXN0LW5leHRqcy9zdGF0aWMvbW9yLmpwZ1wiLz5cclxuXHJcbiAgICAgIDxzZWN0aW9uIGNsYXNzTmFtZT1cInByaW5jaXBhbENvbnRlbnRcIj5cclxuICAgICAgICA8aDE+QUJPVVQ8L2gxPlxyXG4gICAgICAgIDx1bCBjbGFzc05hbWU9XCJhYm91dF9saXN0XCI+XHJcbiAgICAgICAgICB7dGhpcy5wcm9wcy5kYXRhQXBpLm1hcCggKGl0ZW0saSkgPT4gKFxyXG4gICAgICAgICAgICA8bGkga2V5PXtpdGVtLlByb2R1Y3RDb2RlfT5cclxuICAgICAgICAgICAgICA8TGlua1xyXG4gICAgICAgICAgICAgICAgaHJlZj1cIi9wcm9kdWN0cy9bcHJvZHVjdF1cIiBhcz17YC9wcm9kdWN0cy8ke2l0ZW0uUHJvZHVjdENvZGV9YH0+XHJcbiAgICAgICAgICAgICAgICA8YT57aXRlbS5Qcm9kdWN0TmFtZX08L2E+XHJcbiAgICAgICAgICAgICAgPC9MaW5rPjwvbGk+XHJcbiAgICAgICAgICApICl9XHJcbiAgICAgICAgPC91bD5cclxuXHJcbiAgICAgIDwvc2VjdGlvbj5cclxuXHJcbiAgICAgIDxzdHlsZSBqc3g+e2BcclxuICAgICAgICBcclxuICAgICAgICBcclxuICAgICAgICBgfTwvc3R5bGU+XHJcbiAgICAgIFxyXG4gICAgPC9MYXlvdXQ+KTtcclxuICB9XHJcbn1cclxuXHJcbmNvbnN0IEluZGV4ID0gY29ubmVjdChtYXBTdGF0ZVRvUHJvcHMpKEluZGV4Q29ubmVjdGVkKVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgSW5kZXhcclxuIl19 */\n/*@ sourceURL=C:\\Users\\lilliam\\Desktop\\front-end\\practica\\next-redux-pc-2\\pages\\about.js */"));
   }
 
 }
@@ -1309,7 +1309,7 @@ function addToCar(payload) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 6:
 /*!******************************!*\
   !*** multi ./pages/about.js ***!
   \******************************/

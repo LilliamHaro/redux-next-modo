@@ -1193,7 +1193,7 @@ class Product extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
-      className: "mainContent",
+      className: "mainContent principalContent",
       __source: {
         fileName: _jsxFileName,
         lineNumber: 22
@@ -1219,7 +1219,6 @@ class Product extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       },
       __self: this
     })));
-    ProductName;
   }
 
 }

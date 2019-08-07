@@ -14635,7 +14635,7 @@ function (_Component) {
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
-        className: "mainContent",
+        className: "mainContent principalContent",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 22
@@ -14661,7 +14661,6 @@ function (_Component) {
         },
         __self: this
       })));
-      ProductName;
     }
   }]);
 

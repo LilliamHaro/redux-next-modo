@@ -23,11 +23,9 @@ class IndexConnected extends Component {
         <h1>ABOUT</h1>
         <ul className="about_list">
           {this.props.dataApi.map( (item,i) => (
-            <li key={i}>
+            <li key={item.ProductCode}>
               <Link
-                href={"/products?slug=" + item.ProductCode}
-                as={"/products/" + item.ProductCode}
-              >
+                href="/products/[product]" as={`/products/${item.ProductCode}`}>
                 <a>{item.ProductName}</a>
               </Link></li>
           ) )}

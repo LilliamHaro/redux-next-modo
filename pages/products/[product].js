@@ -19,7 +19,7 @@ class Product extends Component {
           ogImage={this.props.item[0].ProductImage}
         />
 
-        <section className="mainContent">
+        <section className="mainContent principalContent">
           <h1>{this.props.item[0].ProductName}</h1>
           <p>{this.props.item[0].ProductDescription}</p>
           <img src={this.props.item[0].ProductImage} />

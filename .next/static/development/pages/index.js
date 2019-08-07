@@ -14700,7 +14700,7 @@ function addToCar(payload) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!*************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5Clilliam%5CDesktop%5Cfront-end%5Cpractica%5Cnext-redux-pc-2%5Cpages%5Cindex.js ***!
   \*************************************************************************************************************************************************************/
@@ -14723,5 +14723,5 @@ module.exports = dll_7aff549c98b978433226;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

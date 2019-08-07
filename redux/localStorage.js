@@ -1,4 +1,6 @@
 
+// funcioanl pero no 100% funcional
+
 // busvando data en el localstorage y desserializando para leerlo
 
 export const loadState = () => {

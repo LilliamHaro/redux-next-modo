@@ -1,9 +1,12 @@
 import React from "react";
 import App, { Component, Container } from "next/app";
 import { Provider } from "react-redux";
-import store from "../redux/store";
+import  store from "../redux/store";
 import fetch from "isomorphic-unfetch";
 import { connect } from 'react-redux'
+
+
+
 
 
 class MyApp extends App {
@@ -23,7 +26,9 @@ class MyApp extends App {
     return (
       <Container>
         <Provider store={store}>
+       
           <Component {...pageProps} />
+    
         </Provider>
       </Container>
     );

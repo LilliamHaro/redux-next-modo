@@ -767,20 +767,20 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_2___default.a {
     return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 27
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {
       store: _redux_store__WEBPACK_IMPORTED_MODULE_4__["default"],
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 28
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 30
       },
       __self: this
     }))));
@@ -824,6 +824,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js");
 /* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_0__);
 
+// funcioanl pero no 100% funcional
 // busvando data en el localstorage y desserializando para leerlo
 const loadState = () => {
   try {
@@ -914,14 +915,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const persistedState = Object(_localStorage__WEBPACK_IMPORTED_MODULE_2__["loadState"])(); // const store= createStore(rootReducer,persistedState ) 
-// store.subscribe(() => {
-//   saveState({
-//     modo: store.getState().modo,
-//     modoTitle: store.getState().modoTitle,
-//   });
-// });
-
+const persistedState = Object(_localStorage__WEBPACK_IMPORTED_MODULE_2__["loadState"])();
 const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_1__["default"], persistedState);
 store.subscribe(() => {
   Object(_localStorage__WEBPACK_IMPORTED_MODULE_2__["saveState"])({
